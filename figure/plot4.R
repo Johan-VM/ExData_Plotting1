@@ -23,6 +23,7 @@ DateTime <- paste(data$Date, data$Time)
 data$Time <- strptime(DateTime, format = "%Y-%m-%d %H:%M:%S")
 
 ## Plot 4 creation
+png("plot4.png", width = 480, height = 480)
 par(mfrow = c(2, 2))
 par(mar = c(4, 4, 1, 1))
 # Subplot 1
@@ -42,5 +43,5 @@ legend("topright", legend = c("Sub_metering_1", "Sub_metering_2", "Sub_metering_
 with(data, plot(Time, Global_reactive_power, main = "", xlab = "datetime", ylab = "Global_reactive_power", type = "n"))
 with(data, lines(Time, Global_reactive_power))
 # PNG export
-dev.copy(png, filename = "plot4.png", width = 480, height = 480)
+# dev.copy(png, filename = "plot4.png", width = 480, height = 480)
 dev.off()
